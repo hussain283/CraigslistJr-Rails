@@ -1,8 +1,11 @@
 CraigslistJr::Application.routes.draw do
   authenticated :user do
-    root :to => 'home#index'
+    root :to => 'categories#index'
   end
-  root :to => "home#index"
+  root :to => "categories#index"
   devise_for :users
   resources :users
+  resources :categories do
+    resources :posts
+  end
 end

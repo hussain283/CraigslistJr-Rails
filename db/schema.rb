@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130716004524) do
+ActiveRecord::Schema.define(:version => 20130716005206) do
+
+  create_table "categories", :force => true do |t|
+    t.string "name"
+  end
+
+  create_table "posts", :force => true do |t|
+    t.string  "title"
+    t.string  "description"
+    t.integer "category_id"
+    t.integer "user_id"
+  end
 
   create_table "roles", :force => true do |t|
     t.string   "name"

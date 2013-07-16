@@ -1,0 +1,6 @@
+<h2>New/Edit Category</h2>
+
+<%= form_for @category do |f| %>
+  <%= f.text_field :name, :placeholder => "Enter a Name" %><br>
+  <%= f.submit %>
+<% end %>
